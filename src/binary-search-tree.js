@@ -88,13 +88,23 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return findMin(this.rootItem)
+    function findMin(node){
+      if(!node.left){
+        return node.data;
+      }
+      return findMin(node.left)
+    }
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return findMax(this.rootItem)
+    function findMax(node){
+      if(!node.right){
+        return node.data;
+      }
+      return findMax(node.right)
+    }
   }
 }
 
